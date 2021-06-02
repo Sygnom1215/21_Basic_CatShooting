@@ -27,22 +27,22 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        minPosition = new Vector2(-8f, -4f);
-        maxPosition = new Vector2(8f, 4f);
-        StartCoroutine(SpawnBlackCat());
+        minPosition = new Vector2(-9f, -5f);
+        maxPosition = new Vector2(9f, 5f);
+        StartCoroutine(SpawnPandaCat());
     }
-    private IEnumerator SpawnBlackCat()
+    private IEnumerator SpawnPandaCat()
     {
         float delay = 0f;
         float positionY = 0f;
         while (true)
         {
-            delay = Random.Range(0.3f, 0.7f);
+            delay = Random.Range(1f, 0.1f);
             positionY = Random.Range(minPosition.y, maxPosition.y);
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 1; i++)
             {
-                Instantiate(enemyPrefab, new Vector2(5f, positionY), Quaternion.identity);
-                yield return new WaitForSeconds(0.2f);
+                Instantiate(enemyPrefab, new Vector2(maxPosition.x, positionY), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
             }
             yield return new WaitForSeconds(delay);
         }
@@ -51,26 +51,26 @@ public class GameManager : MonoBehaviour
     {
         lifeText.text = string.Format("LIFE {0}", life);
         scoreText.text = string.Format("SCORE {0}", score);
-    //    highScoreText.text = string.Format("BEST {0}", highScore);
+        highScoreText.text = string.Format("BEST {0}", highScore);
     }
-    //public void AddScore(int addscore)
-    //{
-    //    score += addscore;
-    //    if (score > highScore)
-    //    {
-    //        highScore = score;
-    //        PlayerPrefs.SetInt("HighScore", highScore);
-    //    }
-    //    UpdateUI();
-    //}
-    //public void Dead()
-    //{
-    //    life--;
-    //    if (life <= 0)
-    //    {
+    public void AddScore(int addscore)
+    {
+        score += addscore;
+        if (score > highScore)
+        {
+            highScore = score;
+            PlayerPrefs.SetInt("HighScore", highScore);
+        }
+        UpdateUI();
+    }
+    public void Dead()
+    {
+        life--;
+        if (life <= 0)
+        {
     //        SceneManager.LoadScene("GameOver");
-    //    }
-    //    UpdateUI();
-    //}
+        }
+        UpdateUI();
+    }
 
 }

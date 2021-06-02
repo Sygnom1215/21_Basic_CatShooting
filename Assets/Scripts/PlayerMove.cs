@@ -19,6 +19,7 @@ public class PlayerMove : MonoBehaviour
     private Vector2 targetPosition = Vector2.zero;
     private GameManager gameManager = null;
     private SpriteRenderer spriteRenderer = null;
+
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -51,20 +52,20 @@ public class PlayerMove : MonoBehaviour
     {
         if (isDamaged) return;
         isDamaged = true;
-    //    StartCoroutine(Dead());
+        StartCoroutine(Dead());
     }
 
-    //private IEnumerator Dead()
-    //{
-    //    gameManager.Dead();
-    //    isDamaged = true;
-    //    for (int i = 0; i < 5; i++)
-    //    {
-    //        spriteRenderer.enabled = false;
-    //        yield return new WaitForSeconds(0.1f);
-    //        spriteRenderer.enabled = true;
-    //        yield return new WaitForSeconds(0.1f);
-    //    }
-    //    isDamaged = false;
-    //}
+    private IEnumerator Dead()
+    {
+        gameManager.Dead();
+        isDamaged = true;
+        for (int i = 0; i < 5; i++)
+        {
+            spriteRenderer.enabled = false;
+            yield return new WaitForSeconds(0.1f);
+            spriteRenderer.enabled = true;
+            yield return new WaitForSeconds(0.1f);
+        }
+        isDamaged = false;
+    }
 }
