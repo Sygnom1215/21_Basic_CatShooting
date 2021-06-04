@@ -27,8 +27,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        minPosition = new Vector2(-9f, -5f);
-        maxPosition = new Vector2(9f, 5f);
+        minPosition = new Vector2(-9f, -4.8f);
+        maxPosition = new Vector2(9f, 4.8f);
         StartCoroutine(SpawnPandaCat());
     }
     private IEnumerator SpawnPandaCat()
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         life--;
         if (life <= 0)
         {
-    //        SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("GameOver");
         }
         UpdateUI();
     }
