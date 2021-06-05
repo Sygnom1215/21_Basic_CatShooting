@@ -52,7 +52,16 @@ public class EnemyMove : MonoBehaviour
                 StartCoroutine(Dead());
                 gameManager.AddScore(score);
             }
+            StartCoroutine(Damaged());
         }
+    }
+    private IEnumerator Damaged()
+    {
+        hp--;
+        spriteRenderer.material.SetColor("_Color", new Color(1f, 0f, 0f, 0f));
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.material.SetColor("_Color", new Color(0f, 0f, 0f, 0f));
+        isDamaged = false;
     }
 
     private IEnumerator Dead()
