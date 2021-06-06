@@ -59,8 +59,8 @@ public class EnemyMove : MonoBehaviour
     {
         hp--;
         spriteRenderer.material.SetColor("_Color", new Color(1f, 0f, 0f, 0f));
-        yield return new WaitForSeconds(0.1f);
-        spriteRenderer.material.SetColor("_Color", new Color(0f, 0f, 0f, 0f));
+        yield return new WaitForSeconds(0.01f);
+        spriteRenderer.material.SetColor("_Color", new Color(1f, 0f, 0f, 1f));
         isDamaged = false;
     }
 
