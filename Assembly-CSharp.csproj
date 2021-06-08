@@ -57,10 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GameOverManager.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\BulletMove.cs" />
-    <Compile Include="Assets\Scripts\GameOverManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
