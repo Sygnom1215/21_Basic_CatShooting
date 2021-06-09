@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int life = 5;
     [SerializeField]
-    private int highScore = 0;
+    private int highScore =0;
     [SerializeField]
     private int score = 0;
 
@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
         minPosition = new Vector2(-9f, -4.8f);
         maxPosition = new Vector2(9f, 4.8f);
         StartCoroutine(SpawnPandaCat());
+        highScore = PlayerPrefs.GetInt("HighScore", 500);
+        UpdateUI();
     }
     private IEnumerator SpawnPandaCat()
     {
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour
         scoreText.text = string.Format("SCORE {0}", score);
         highScoreText.text = string.Format("BEST {0}", highScore);
     }
+
     public void AddScore(int addscore)
     {
         score += addscore;

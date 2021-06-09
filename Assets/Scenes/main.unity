@@ -579,7 +579,7 @@ MonoBehaviour:
   lifeText: {fileID: 2008288943}
   scoreText: {fileID: 1858542437}
   highScoreText: {fileID: 1144211955}
-  life: 5
+  life: 3
   highScore: 0
   score: 0
 --- !u!4 &1398116300
