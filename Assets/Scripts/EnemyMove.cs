@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     [SerializeField]
-    private int score = 100;
+    private int score = 1;
     [SerializeField]
     private int hp = 2;
     [SerializeField]

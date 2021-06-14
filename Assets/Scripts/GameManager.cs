@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         lifeText.text = string.Format("LIFE {0}", life);
         scoreText.text = string.Format("SCORE {0}", score);
-        highScoreText.text = string.Format("BEST {0}", highScore);
+        highScoreText.text = string.Format("가장 많이 꼬신 고양이 수 {0}", highScore);
     }
 
     public void AddScore(int addscore)
