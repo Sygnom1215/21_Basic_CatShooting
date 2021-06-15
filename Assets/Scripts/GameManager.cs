@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         minPosition = new Vector2(-9f, -4.8f);
         maxPosition = new Vector2(9f, 4.8f);
         StartCoroutine(SpawnPandaCat());
-        highScore = PlayerPrefs.GetInt("HighScore", 500);
+        highScore = PlayerPrefs.GetInt("HighScore", 10);
         UpdateUI();
     }
     private IEnumerator SpawnPandaCat()
