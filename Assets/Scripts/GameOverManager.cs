@@ -11,7 +11,7 @@ public class GameOverManager : MonoBehaviour
 
     void Start()
     {
-        textHighScore.text = string.Format("가장 많이 꼬신 고양이 마리 수 {0}", PlayerPrefs.GetInt("HighScore", 500));
+        textHighScore.text = string.Format("가장 많이 꼬신 고양이 마리 수 {0}", PlayerPrefs.GetInt("HighScore", 0));
     }
 
     public void OnClickStart()
