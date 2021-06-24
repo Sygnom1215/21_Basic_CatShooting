@@ -19,12 +19,15 @@ public class EnemyMove : MonoBehaviour
     private Collider2D col = null;
     private SpriteRenderer spriteRenderer = null;
 
+    public AudioSource audioSource;
+
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         animator = GetComponent<Animator>();
         col = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -44,7 +47,7 @@ public class EnemyMove : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {
             if (isDamaged) return;
-
+            StartCoroutine(catMeow());
             hp--;
             Destroy(collision.gameObject);
             if (hp <= 0)
@@ -55,6 +58,12 @@ public class EnemyMove : MonoBehaviour
             StartCoroutine(Damaged());
         }
     }
+    private IEnumerator catMeow()
+    {
+        audioSource.Play();
+        yield return new WaitForSeconds(1f);
+    }
+
     private IEnumerator Damaged()
     {
         hp--;
