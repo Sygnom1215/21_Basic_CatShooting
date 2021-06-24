@@ -13,6 +13,7 @@ public class EnemyMove : MonoBehaviour
 
     private bool isDead = false;
     private bool isDamaged = false;
+    // private bool isSound = false; 이용해서 최초 피격시에만 소리 나게 하기
 
     private GameManager gameManager = null;
     private Animator animator = null;
@@ -60,8 +61,10 @@ public class EnemyMove : MonoBehaviour
     }
     private IEnumerator catMeow()
     {
+        //if(isSound)
         audioSource.Play();
         yield return new WaitForSeconds(1f);
+
     }
 
     private IEnumerator Damaged()
