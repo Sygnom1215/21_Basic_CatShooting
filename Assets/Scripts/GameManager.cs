@@ -75,5 +75,9 @@ public class GameManager : MonoBehaviour
         }
         UpdateUI();
     }
+    public void GameQuit()
+    {
+        Application.Quit();
+    }
 
 }
