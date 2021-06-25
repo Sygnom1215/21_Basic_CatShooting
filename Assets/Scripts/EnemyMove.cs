@@ -9,20 +9,20 @@ public class EnemyMove : MonoBehaviour
     [SerializeField]
     private int hp = 2;
     [SerializeField]
-    private float speed = 5f;
+    protected float speed = 5f;
 
-    private bool isDead = false;
+    protected bool isDead = false;
     private bool isDamaged = false;
     // private bool isSound = false; 이용해서 최초 피격시에만 소리 나게 하기
 
-    private GameManager gameManager = null;
+    protected GameManager gameManager = null;
     private Animator animator = null;
     private Collider2D col = null;
     private SpriteRenderer spriteRenderer = null;
 
     public AudioSource audioSource;
 
-    void Start()
+    protected virtual void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         animator = GetComponent<Animator>();
@@ -31,7 +31,7 @@ public class EnemyMove : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (isDead) return;
         transform.Translate(Vector2.left * speed * Time.deltaTime);
@@ -75,7 +75,6 @@ public class EnemyMove : MonoBehaviour
         spriteRenderer.material.SetColor("_Color", new Color(1f, 0f, 0f, 0.25f));
         isDamaged = false;
     }
-
     private IEnumerator Dead()
     {
         Destroy(gameObject);

@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject enemyPrefab = null;
     [SerializeField]
+    private GameObject enemyBlackCat = null;
+    [SerializeField]
     private Text lifeText = null;
     [SerializeField]
     private Text scoreText = null;
@@ -49,6 +51,25 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(delay);
         }
     }
+
+    private IEnumerator SpawnBlackCat()
+    {
+        float randomY = 0f;
+        float randomDelay = 0f;
+        yield return new WaitForSeconds(3f);
+        while (true)
+        {
+            randomY = Random.Range(0f, 7f);
+            randomDelay = Random.Range(1f, 5f);
+            for (int i = 0; i < 5; i++)
+            {
+                Instantiate(enemyBlackCat, new Vector2(maxPosition.x, randomY), Quaternion.identity);
+                yield return new WaitForSeconds(0.4f);
+            }
+            yield return new WaitForSeconds(randomDelay);
+        }
+    }
+
     private void UpdateUI()
     {
         lifeText.text = string.Format("LIFE {0}", life);
