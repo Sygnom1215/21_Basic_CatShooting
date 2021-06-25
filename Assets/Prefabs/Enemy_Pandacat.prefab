@@ -50,6 +50,7 @@ MonoBehaviour:
   score: 1
   hp: 2
   speed: 5
+  audioSource: {fileID: 0}
 --- !u!212 &1541202361329854052
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -191,7 +192,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 472262566c8d1354c829e23536153d3d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7abe13566b88a5148bec9421662ae099, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
