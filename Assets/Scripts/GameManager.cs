@@ -27,11 +27,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int score = 0;
 
+    public PoolManager poolManager { get; private set; }
+
     void Start()
     {
         minPosition = new Vector2(-9f, -4.8f);
         maxPosition = new Vector2(9f, 4.8f);
         StartCoroutine(SpawnPandaCat());
+        poolManager = FindObjectOfType<PoolManager>();
         highScore = PlayerPrefs.GetInt("HighScore", 10);
         UpdateUI();
     }

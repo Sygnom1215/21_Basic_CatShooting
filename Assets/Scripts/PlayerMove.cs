@@ -68,4 +68,19 @@ public class PlayerMove : MonoBehaviour
         }
         isDamaged = false;
     }
+    //private void InstantiateOrSpawn()
+    //{
+    //    GameObject bullet = null;
+    //    if (gameManager.poolManager.transform.childCount > 0)
+    //    {
+    //        bullet = gameManager.poolManager.transform.GetChild(0).gameObject;
+    //        bullet.SetActive(true);
+    //    }
+    //    else
+    //    {
+    //        bullet = Instantiate(bulletPrefab, bulletPosition);
+    //    }
+    //    bullet.transform.SetParent(null);
+    //    bullet.transform.position = bulletPosition.position;
+    //}
 }
