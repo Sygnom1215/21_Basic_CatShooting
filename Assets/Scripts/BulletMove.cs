@@ -22,26 +22,26 @@ public class BulletMove : MonoBehaviour
 
     //private void CatPosition()
     //{
-    //    if (transform.position.x > gameManager.maxPosition.x + 2f)
+    //    if (transform.position.x > GameManager.Instance.maxPosition.x + 2f)
     //    {
     //        Destroy(gameObject);
     //    }
     //}
     private void CatPosition()
     {
-        if (transform.position.y > gameManager.maxPosition.y + 2f)
+        if (transform.position.y > GameManager.Instance.maxPosition.y + 2f)
         {
             Despawn();
         }
-        if (transform.position.y < gameManager.minPosition.y - 2f)
+        if (transform.position.y < GameManager.Instance.minPosition.y - 2f)
         {
             Despawn();
         }
-        if (transform.position.x > gameManager.maxPosition.x + 2f)
+        if (transform.position.x > GameManager.Instance.maxPosition.x + 2f)
         {
             Despawn();
         }
-        if (transform.position.x < gameManager.minPosition.x - 2f)
+        if (transform.position.x < GameManager.Instance.minPosition.x - 2f)
         {
             Despawn();
         }
@@ -49,7 +49,7 @@ public class BulletMove : MonoBehaviour
 
     public void Despawn()
     {
-        transform.SetParent(gameManager.poolManager.transform, false);
+        transform.SetParent(GameManager.Instance.poolManager.transform, false);
         gameObject.SetActive(false);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoSingleton<GameManager> 
 {
 
     public Vector2 minPosition { get; private set; }
@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     private int highScore =0;
     [SerializeField]
     private int score = 0;
+
+
 
     public PoolManager poolManager { get; private set; }
 
